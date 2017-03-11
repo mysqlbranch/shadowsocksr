@@ -220,6 +220,7 @@ class TCPRelayHandler(object):
         self._server.stat_add(self._client_address[0], 1)
         self.speed_tester_u = SpeedTester(config.get("speed_limit_per_con", 0))
         self.speed_tester_d = SpeedTester(config.get("speed_limit_per_con", 0))
+        logging.info("connection from %s:%d" % (self._client_address[0], self._client_address[1]))
 
     def __hash__(self):
         # default __hash__ is id / 16
