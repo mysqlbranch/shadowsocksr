@@ -487,6 +487,7 @@ class TCPRelayHandler(object):
             # sendto to connect
             try:
                 # only connect once
+                logging.warn('remote connet from %s:%d handle stage connection' % (self._client_address[0], self._client_address[1]))
                 self._fastopen_connected = True
                 remote_sock = \
                     self._create_remote_socket(self._chosen_server[0],
